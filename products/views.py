@@ -22,7 +22,7 @@ def product_list(request):
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'GET':
-        serializer = ProductSerializer(product)
+        serializer = ProductSerializer(product);
         return Response(serializer.data)
     elif request.method == 'PUT':
         serializer = ProductSerializer(product, data=request.data)
